@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
   # boxes at https://atlas.hashicorp.com/search.
   Vagrant.configure("2") do |config|
   if Vagrant.has_plugin?("vagrant-proxyconf")
-    config.proxy.http     = "http://corp\\nbodhe@Nick*9405:10.76.4.16:8080"
-    config.proxy.https    = "http://corp\\nbodhe@Nick*9405:10.76.4.16:8080"
+    config.proxy.http     = "http://corp\\**@***:0.0.0.0:8080"
+    config.proxy.https    = "http://corp\\**@**:0.0.0.0:8080"
     config.proxy.no_proxy = "localhost,127.0.0.1"
   end
   # ... other stuff
