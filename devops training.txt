@@ -1,0 +1,412 @@
+https://www.hipchat.com/g9uCQE1fW
+
+http://pkg.jenkins-ci.org/debian-stable/
+
+slave launchers and controllers
+
+
+ git commit -a -m "created script"
+   40  git 
+
+opscode_ubuntu-14.04_chef-provisionerless.box
+
+http://job-dsl.herokuapp.com/
+
+https://github.com/mohitsethi/cap-seed-job 	
+https://github.com/mohitsethi/cap-trng
+
+build monitor plugin
+
+build metrics plugin-report
+
+git squash
+
+http://ricostacruz.com/cheatsheets/
+
+cnt+shift+p
+install package
+doc.chef.io/resource_*remote_file*.html
+------------------------------------------------------
+
+chef provides:
+
+1. provisioning
+2. Configuration
+3. Integration
+
+disable ssl authentication:
+
+ssl_verify_mode          :verify_none
+knife[:ssl_verify_peer] = false
+knife[:ssl_verify_mode] = :verify_none
+knife[:editor] = "/usr/bin/vim"
+
+5 princeiple:
+
+1. Idempotent
+2. 
+3. Data driven
+4. 
+
+
+-----------------------------------------------------------
+
+irc.freenode.net#chef-hacking
+freesheep, foodfight
+
+
+------------------------------------------------
+
+Jenkins seed job in Groovy requires dsl plugin
+Jenkins plugins are in Java, jelly
+Jenkin
+vagrant language is ruby
+
+----------------------------------------------------
+
+    1 vagrant box add chef_base opscode_ubuntu-14.04_chef-provisionerless.box
+    2  vagrant box list
+    3  vagrant
+    4  vagrant list-commands
+    5  cls
+    6  clear
+    7  ls
+    8  vagrant --version
+    9  vagrant status
+   10  vagrant init
+   11  ls
+   12  rm -rf Vagrantfile
+   13  vagrant init chef_base
+   14  vagrant up
+   15  vagrant status
+   16  vagrant ssh
+   17  history
+
+--------------
+
+lsb_release -a
+
+git clone https://github.com/mohitsethi/cap-trng.git
+
+
+                                                                                                                                        
+CHEF-CLIENT --> GET CONFIG DATA --> AUTH TO CHEF SERVER --> GET NODE PROJECT--> EXPAND THE RUN LIST --> SYNC EVERY COOKBOOK --> RESET NODE ATTRIBUTES-->COMPILE RESOURCE COLLECTION--> CONVERGE THE NODE --> UPDATE NODE OBJECT
+
+
+
+
+
+service service-manager stop
+service case-manager stop
+(if it is not working)
+pkill case-manager
+pkill case-manager
+
+
+
+yum erase service-manager case-manager -y
+
+rm -rf /opt/dpservice*
+
+rm -rf /tmp/*
+
+
+
+----------------------------------------------------------------
+
+if [ -f /etc/debian_version ]; then
+    echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+    echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' | tee -a /etc/apt/sources.list.d/webupd8team-java.list
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+    sudo apt-get update -y
+    echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+    sudo apt-get update -y
+    sudo apt-get install oracle-java8-installer -y
+elif [ -f /etc/lsb-release ]; then
+    . /etc/lsb-release
+    OS=$DISTRIB_ID
+    VER=$DISTRIB_RELEASE
+fi
+
+
+VAGRANT_HTTP_PROXY="http://10.76.4.18:8080" vagrant up
+
+Acquire::http::Proxy "http://nbodhe:Nick*9405@10.76.4.18:8080";
+Acquire::http::Proxy "http://[<proxyUserName>:<proxyPass>@]<proxyUrl>:<proxyPort>";
+
+
+Acquire::http::proxy "http://10.76.4.18:8080/";
+Acquire::https::proxy "https://10.76.4.18:8080/";
+
+
+Acquire::http::proxy "http://nbodhe:Nick*9405@10.76.4.18:8080/";
+
+export https_proxy=https://nbodhe:***@10.76.4.18:8080/
+
+-----------------------------------------------------------------------------
+
+
+node = servers
+attributes = variables
+roles - can define attributes and what recipes applied to node
+clients - anythiong that uses api
+resources - are the basic building blocks to define state
+related resources are grouped into recipes
+related recipes are grouped into cookbooks
+
+
+chef solo
+
+/chef-repo
+knife cookbook create webserver
+
+
+<% if node[:platforms] == 'ubuntu' -%> 
+<h1> Capgemini (<%= node['fqdn'] %>) </h1>
+<% end -%>
+
+----------------------------------------------------------------------
+
+chef commands
+
+ cd chef-repo/
+    2  ls
+    3  knfie cookbook webserver
+    4  knife cookbook webserver
+    5  ls -la
+    6  cd cookbooks/
+    7  ls
+    8  cd ..
+    9  knife cookbook create webserver
+   10  cd cookbooks/
+   11  ls
+   12  cd webserver/
+   13  ls -la
+   14  cd attributes/
+   15  vim default.rb
+   16  cd ..
+   17  ls
+   18  cd recipes/
+   19  ls
+   20  vim default.rb
+   21  cd ../..
+   22*
+   23  knife cookbook list
+   24  knife cookbook upload webserver
+   25  knife cookbook list
+   26  vagrant status
+   27  knife bootstrap 33.33.32.5 --ssh-user vagrant --ssh-password vagrant -r "recipe[webserver]" --sudo -N webserver2
+   28  knife bootstrap 33.33.32.5 --ssh-user vagrant --ssh-password vagrant -r "recipe[webserver]" --sudo -N webserver2
+   29  pwd
+   30  cd ..
+   31  vagrant ssh chefnode2
+   32  vagrant ssh chef_node_2
+   33  history
+   34  pwd
+   35  cd chef-repo/
+   36  ls
+   37  cd cookbooks/
+   38  ls
+   39  cd webserver/
+   40  ls
+   41  cd files/
+   42  ls
+   43  cd default/
+   44  vim index.html
+   45  knife upload cookbook webserver
+   46  pwd
+   47  cd ../../..
+   48  pwd
+   49  cd ..
+   50  knife upload cookbook webserver
+   51  knife cookbook upload webserver
+   52  knife cookbook upload webserver
+   53  cd cookbooks/webserver/templates/
+   54  cd default/
+   55  vim index.html.erb
+   56  knife cookbook upload webserver
+   57  knife cookbook upload webserver
+   58  history
+
+
+---------------------------------------------------------
+
+Vagrant Commands:
+ 
+history|grep deb
+    2  history|grep jenkins
+    3  cd cap-trng/
+    4  git pull origin master
+    5  vagrant provision
+    6  cd ..
+    7  vagrant provision
+    8  vagrant provision
+    9  pwd
+   10  cd cap-trng/
+   11  ls
+   12  git pull origin master
+   13  cd ..
+   14  ls
+   15  cd cap-trng/
+   16  git clone https://github.com/mohitsethi/cap-seed-job.git
+   17  cd cap-seed-job/
+   18  ls
+   19  which knife
+   20  knife --help
+   21  knife node
+   22  ls
+   23  cd ..
+   24  cd ..
+   25  ls
+   26  ls -lrt
+   27  cd chef
+   28  cd chef-repo/
+   29  ls -lrt
+   30  ls -la
+   31  cd .chef/
+   32  ls
+   33  knife client list
+   34  knife node list
+   35  git pull origine master
+   36  cd ..
+   37  ls
+   38  cd ..
+   39  ls
+   40  cd cap-trng/
+   41  cd ..
+   42  git pull origine master
+   43  cd cap-trng/
+   44  git pull origine master
+   45  git clone config.vm.define :chef_node_1 do |vm_config|     vm_config.vm.network "private_network", ip: "33.33.32.4"
+   46      vm_config.vm.hostname = "chef_node_1.capgemini.com"
+   47      # vm_config.vm.network "forwarded_port", guest: 8140, host: 8140
+   48  git clone https://github.com/mohitsethi/cap-trng.git
+   49  cd cap-trng/
+   50  git clone https://github.com/mohitsethi/cap-trng.git
+   51  vagrant provision
+   52  cd ..
+   53  cd ..
+   54  ls
+   55  vagrant provision
+   56  vagrant up
+   57  vagrant up
+   58  vagrant client list
+   59  vagrant list client
+   60  vagrant list clients
+   61  vagrant list-clients
+   62  vagrant box list
+   63  vagrant provision
+   64  vagrant up
+   65  vagrant provision client_node_1
+   66  vagrant provision chef_node_1
+   67  vagrant provision chef_node_1
+   68  vagrant ssh chef_node_1
+   69  vagrant status
+   70  knife bootstrap
+   71  cd chef-repo/
+   72  knife bootstrap 33.33.32.4 --ssh-user vagrant --ssh-password vagrant -r "recipe[webserver]" --sudo -N webserver
+   73  vgrant ssh jenkins_master
+   74  vagrant ssh jenkins_master
+   75  history
+
+------------------------------------------------------------------------
+
+cd chef-repo/
+    2  ls
+    3  knfie cookbook webserver
+    4  knife cookbook webserver
+    5  ls -la
+    6  cd cookbooks/
+    7  ls
+    8  cd ..
+    9  knife cookbook create webserver
+   10  cd cookbooks/
+   11  ls
+   12  cd webserver/
+   13  ls -la
+   14  cd attributes/
+   15  vim default.rb
+   16  cd ..
+   17  ls
+   18  cd recipes/
+   19  ls
+   20  vim default.rb
+   21  cd ../..
+   22*
+   23  knife cookbook list
+   24  knife cookbook upload webserver
+   25  knife cookbook list
+   26  vagrant status
+   27  knife bootstrap 33.33.32.5 --ssh-user vagrant --ssh-password vagrant -r "recipe[webserver]" --sudo -N webserver2
+   28  knife bootstrap 33.33.32.5 --ssh-user vagrant --ssh-password vagrant -r "recipe[webserver]" --sudo -N webserver2
+   29  pwd
+   30  cd ..
+   31  vagrant ssh chefnode2
+   32  vagrant ssh chef_node_2
+   33  history
+   34  pwd
+   35  cd chef-repo/
+   36  ls
+   37  cd cookbooks/
+   38  ls
+   39  cd webserver/
+   40  ls
+   41  cd files/
+   42  ls
+   43  cd default/
+   44  vim index.html
+   45  knife upload cookbook webserver
+   46  pwd
+   47  cd ../../..
+   48  pwd
+   49  cd ..
+   50  knife upload cookbook webserver
+   51  knife cookbook upload webserver
+   52  knife cookbook upload webserver
+   53  cd cookbooks/webserver/templates/
+   54  cd default/
+   55  vim index.html.erb
+   56  knife cookbook upload webserver
+   57  knife cookbook upload webserver
+   58  history
+   59  cd /d/New\ folder/
+   60  cd chef-repo/
+   61  knife create environment stage
+   62  knife environment create stage
+   63  ls
+   64  cd cookbooks/
+   65  ls
+   66  find / -name knife.rb
+   67  cd ..
+   68  ls -la
+   69  cd .chef/
+   70  ls
+   71  vim knife.rb
+   72  knife environment create stage
+   73  vim knife.rb
+   74  knife environment create stage
+   75  vim knife.rb
+   76  vim knife.rb
+   77  knife environment create stage
+   78  knife download environments
+   79  cd ..
+   80  knife download environments
+   81  cd environments/dev.json
+   82  vim environments/dev.json
+   83  knife upload environments
+   84  pwd
+   85  vagrant halt
+   86  vagrant up chef_server
+   87  cd ..
+   88  vagrant up chef_server
+   89  vagrant up chef_server
+   90  vagrant up chef_node_1
+   91  vagrant up chef_node_2
+   92  history
+
+
+
+
+
+
+
